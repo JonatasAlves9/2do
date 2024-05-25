@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/router";
+import React from "react";
+import ProtectedLayout from "./layout/ProtectedLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-600 h-screen`}>{children}</body>
+      <body className={`${inter.className}  h-screen`}>
+        <ToastContainer />
+        {children}
+      </body>
     </html>
   );
 }
