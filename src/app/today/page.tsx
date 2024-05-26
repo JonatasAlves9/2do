@@ -1,6 +1,16 @@
-import { RiCheckboxCircleLine, RiCheckLine, RiKanbanView, RiRemixiconLine, RiRemixRunLine, RiSettings2Line, RiSettings3Line, RiSettings5Line } from "react-icons/ri";
+import {
+  RiCheckboxCircleLine,
+  RiCheckLine,
+  RiKanbanView,
+  RiRemixiconLine,
+  RiRemixRunLine,
+  RiSettings2Line,
+  RiSettings3Line,
+  RiSettings5Line,
+} from "react-icons/ri";
 import ProtectedLayout from "../layout/ProtectedLayout";
 import { CardTask } from "@/components/cardTask";
+import { TaskList } from "@/components/taskList";
 
 export default function Today() {
   const today = new Date();
@@ -36,22 +46,7 @@ export default function Today() {
               - Hoje
             </p>
           </div>
-          <CardTask
-            title="Atividade 1"
-            id={0}
-            done={false}
-            description={
-              "Descrição da atividade 1 aqui chegando um texto maior para poder tratar asorbei dbniasod ias oiam"
-            }
-            date={new Date()}
-            tags={[
-              {
-                id: 0,
-                name: "Entrada",
-                icon: RiCheckLine,
-              },
-            ]}
-          />
+          <TaskList />
         </div>
       </div>
     </ProtectedLayout>

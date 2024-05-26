@@ -1,28 +1,30 @@
 import { RiCheckLine, RiMoreFill } from "react-icons/ri";
 import "./styles.css";
+import { IconType } from "react-icons";
 
-interface Task {
+export interface Task {
   id: number;
   title: string;
   done: boolean;
   description: string;
   date: Date;
-  tags: [
-    {
-      id: number;
-      name: string;
-      icon: React.ComponentType<any>;
-    }
-  ];
+  tags: {
+    id: number;
+    name: string;
+    icon: IconType;
+  }[];
 }
 
-interface IProps extends Task {}
+interface IProps extends Task {
+  onClick?: () => void;
+}
 
 export const CardTask = (task: IProps) => {
   return (
     <div
       className="relative CardTask flex gap-4 bg-white border rounded-md p-4 w-full mt-3"
       style={{ cursor: "pointer", userSelect: "none" }}
+      onClick={task.onClick}
     >
       <div>
         <div className="rounded p-1 border mt-1 hover:shadow-sm hover:bg-slate-100 relative check">
@@ -31,7 +33,9 @@ export const CardTask = (task: IProps) => {
       </div>
       <div>
         <h2 className="text-sm text-gray-500 line-clamp-1">{task.title}</h2>
-        <p className="text-gray-400 text-xs mt-1 line-clamp-1" >{task.description}</p>
+        <p className="text-gray-400 text-xs mt-1 line-clamp-1">
+          {task.description}
+        </p>
         <div>
           {task.tags.map((tag) => (
             <div key={tag.id} className="flex items-center mt-2 gap-1 text-xs">
