@@ -3,7 +3,7 @@ import { RiAddLine } from "react-icons/ri";
 export const ActionNewTask = () => {
   return (
     <a
-      href="/dashboard"
+      href="/today"
       className="text-sm p-2 flex items-center text-purple-800 rounded-md hover:bg-gray-200 mb-4 font-bold"
     >
       <svg

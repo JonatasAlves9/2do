@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 export function middleware(req: NextRequest) {
   const authCookie = cookies().get("auth");
 
-  if (!authCookie && req.nextUrl.pathname.startsWith("/dashboard")) {
+  if (!authCookie && req.nextUrl.pathname.startsWith("/today")) {
     return NextResponse.redirect(new URL("/auth/login", req.url));
   }
 

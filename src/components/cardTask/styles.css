@@ -1,0 +1,27 @@
+.CardTask {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.CardTask:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.CardTask:hover .icon {
+  display: block;
+  opacity: 1;
+}
+
+.icon {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; 
+}
+.check:hover .icon-check {
+  display: block;
+  opacity: 1;
+}
+
+.icon-check {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; 
+}
+
