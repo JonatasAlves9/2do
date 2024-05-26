@@ -1,4 +1,4 @@
-import { RiCheckboxCircleLine, RiCheckLine } from "react-icons/ri";
+import { RiCheckboxCircleLine, RiCheckLine, RiKanbanView, RiRemixiconLine, RiRemixRunLine, RiSettings2Line, RiSettings3Line, RiSettings5Line } from "react-icons/ri";
 import ProtectedLayout from "../layout/ProtectedLayout";
 import { CardTask } from "@/components/cardTask";
 
@@ -7,11 +7,22 @@ export default function Today() {
   return (
     <ProtectedLayout>
       <div className="p-4">
-        <div>
-          <h1 className="font-bold text-lg text-gray-800">Hoje</h1>
-          <div className="flex items-center mt-2 text-gray-500">
-            <RiCheckboxCircleLine className="text-xs me-1" />
-            <span className="text-xs">1 tarefa</span>
+        <div className="flex justify-between">
+          <div>
+            <h1 className="font-bold text-lg text-gray-800">Hoje</h1>
+            <div className="flex items-center mt-2 text-gray-500">
+              <RiCheckboxCircleLine className="text-xs me-1" />
+              <span className="text-xs">1 tarefa</span>
+            </div>
+          </div>
+          <div>
+            <a
+              href="/today/new"
+              className="text-sm p-2 flex items-center text-gray-500 rounded-md hover:bg-gray-200 mb-4 font-bold"
+            >
+              <RiKanbanView className="w-6 h-6 mr-2" />
+              Visualizar
+            </a>
           </div>
         </div>
         <div className="mt-4">
@@ -29,13 +40,17 @@ export default function Today() {
             title="Atividade 1"
             id={0}
             done={false}
-            description={"Descrição da atividade 1 aqui chegando um texto maior para poder tratar asorbei dbniasod ias oiam"}
+            description={
+              "Descrição da atividade 1 aqui chegando um texto maior para poder tratar asorbei dbniasod ias oiam"
+            }
             date={new Date()}
-            tags={[{
-              id: 0,
-              name: "Entrada",
-              icon: RiCheckLine,
-            }]}
+            tags={[
+              {
+                id: 0,
+                name: "Entrada",
+                icon: RiCheckLine,
+              },
+            ]}
           />
         </div>
       </div>

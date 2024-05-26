@@ -21,7 +21,7 @@ interface IProps extends Task {}
 export const CardTask = (task: IProps) => {
   return (
     <div
-      className="relative CardTask flex gap-4 bg-white border rounded-md p-4 w-80 mt-3"
+      className="relative CardTask flex gap-4 bg-white border rounded-md p-4 w-full mt-3"
       style={{ cursor: "pointer", userSelect: "none" }}
     >
       <div>
