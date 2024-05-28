@@ -85,7 +85,7 @@ const tasks = [
 export const TaskList = () => {
   const [taskSelected, setTaskSelected] = React.useState<Task>();
   return (
-    <div>
+    <div className="w-1/4">
       {tasks.map((task) => (
         <CardTask
           key={task.id}
